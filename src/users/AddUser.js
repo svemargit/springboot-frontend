@@ -4,7 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 
 export default function AddUser() {
 
-    let navigate=useNavigate()
+    let navigate = useNavigate()
 
     const [user, setUser] = useState({
         email: "",
@@ -19,8 +19,8 @@ export default function AddUser() {
     }
 
     const onSubmit = async (e) => {
-e.preventDefault();
-await axios.post("http://127.0.0.1:8080/api/v1/student/", user)
+        e.preventDefault();
+        await axios.post("http://127.0.0.1:8080/api/v1/student/", user)
         navigate("/")
     }
 
@@ -30,7 +30,7 @@ await axios.post("http://127.0.0.1:8080/api/v1/student/", user)
                 <h2>User Form</h2>
             </div>
             <div className="container d-flex justify-content-center">
-                <form  onSubmit={onSubmit}>
+                <form onSubmit={onSubmit} className={"col-10"}>
                     <input name="id" type="hidden"/>
                     <div className="p-3 shadow">
                         <div className="form-group row">
